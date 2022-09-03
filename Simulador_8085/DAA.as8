@@ -1,0 +1,5 @@
+ORG E000h   ; *          
+MVI A,07h   ; 3Eh 07h    
+ADI 46h     ; C6h 46h    
+DAA         ; 27h        
+HLT         ; 76h        

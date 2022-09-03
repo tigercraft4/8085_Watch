@@ -1,0 +1,21 @@
+ORG E000h   ; *          
+:INICIO     ;            
+IN 03h      ; DBh 03h    
+CPI 10h     ; FEh 10h    
+JZ FIM      ; CAh 0Eh E0h
+ADI 30h     ; C6h 30h    
+OUT 01h     ; D3h 01h    
+JMP INICIO  ; C3h 00h E0h
+:FIM        ;            
+CALL CLRSCR ; CDh XXh XXh
+HLT         ; 76h        
+:CLRSCR     ;            
+XRA A       ; AFh        
+OUT 00h     ; D3h 00h    
+MVI B,20h   ; 06h 20h    
+:LOOPCL     ;            
+MVI A,20h   ; 3Eh 20h    
+OUT 01h     ; D3h 01h    
+DCR B       ; 05h        
+JNZ LOOPCL  ; C2h XXh XXh
+RET         ; C9h        

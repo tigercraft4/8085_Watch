@@ -1,0 +1,12 @@
+ORG E000h   ; *          
+MVI A,00h   ; 3Eh 00h    
+INR A       ; 3Ch        
+CPE TESTE   ; ECh XXh XXh
+ADI 02h     ; C6h 02h    
+CPE TESTE   ; ECh XXh XXh
+NOP         ; 00h        
+MVI H,44h   ; 26h 44h    
+HLT         ; 76h        
+:TESTE      ;            
+MVI D,22h   ; 16h 22h    
+RET         ; C9h        

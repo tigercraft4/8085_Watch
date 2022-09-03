@@ -1,0 +1,6 @@
+ORG E000h   ; *          
+:INICIO     ;            
+IN 03h      ; DBh 03h    
+ADI 40h     ; C6h 40h    
+OUT 01h     ; D3h 01h    
+JMP INICIO  ; C3h 00h E0h

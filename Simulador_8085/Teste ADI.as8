@@ -1,0 +1,4 @@
+MVI A,30h           ; 3Eh 30h
+MVI B,DEh           ; 06h DEh
+ADD B               ; 80h
+ADI 10h             ; C6h 10h

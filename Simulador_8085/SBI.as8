@@ -1,0 +1,2 @@
+MVI A,07h   ; 3Eh 07h    
+SBI 07h     ; DEh 07h    

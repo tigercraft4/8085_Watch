@@ -1,0 +1,19 @@
+ORG E000h   ; *          
+:INICIO     ;            
+MVI A,00h   ; 3Eh 00h    
+OUT 00h     ; D3h 00h    
+MVI A,2Dh   ; 3Eh 2Dh    
+OUT 01h     ; D3h 01h    
+MVI A,00h   ; 3Eh 00h    
+OUT 00h     ; D3h 00h    
+MVI A,2Fh   ; 3Eh 2Fh    
+OUT 01h     ; D3h 01h    
+MVI A,00h   ; 3Eh 00h    
+OUT 00h     ; D3h 00h    
+MVI A,7Ch   ; 3Eh 7Ch    
+OUT 01h     ; D3h 01h    
+MVI A,00h   ; 3Eh 00h    
+OUT 00h     ; D3h 00h    
+MVI A,5Ch   ; 3Eh 5Ch    
+OUT 01h     ; D3h 01h    
+JMP INICIO  ; C3h XXh XXh

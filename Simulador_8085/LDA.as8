@@ -1,0 +1,5 @@
+MVI H,AAh   ; 26h AAh    
+MVI L,AAh   ; 2Eh AAh    
+MVI M,66h   ; 36h 66h    
+LDA AAAAh   ; 3Ah AAh AAh
+HLT         ; 76h        

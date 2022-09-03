@@ -1,0 +1,87 @@
+ORG E000h   ; *          
+CALL TELA   ; CDh XXh XXh
+LXI H,FFFFh ; 21h FFFFh  
+SPHL        ; F9h        
+MVI B,00h   ; 06h 55h    
+MVI C,00h   ; 0Eh 58h    
+MVI D,00h   ; 16h 00h    
+:INICIO     ;            
+MOV A,B     ; 78h        
+INR A       ; 3Ch        
+DAA         ; 27h        
+CPI 60h     ; FEh 60h    
+CZ INCMIN   ; CCh XXh XXh
+MVI E,06h   ; 1Eh 06h    
+CALL SHOW   ; CDh XXh XXh
+MOV B,A     ; 47h        
+JMP INICIO  ; C3h 0Dh E0h
+:INCMIN     ;            
+MVI A,00h   ; 3Eh 00h    
+PUSH PSW    ; F5h        
+MVI E,06h   ; 1Eh 06h    
+CALL SHOW   ; CDh XXh XXh
+MOV A,C     ; 79h        
+INR A       ; 3Ch        
+DAA         ; 27h        
+CPI 60h     ; FEh 60h    
+CZ INCHOR   ; CCh XXh XXh
+MVI E,03h   ; 1Eh 03h    
+CALL SHOW   ; CDh XXh XXh
+MOV C,A     ; 4Fh        
+POP PSW     ; F1h        
+RET         ; C9h        
+:INCHOR     ;            
+MVI A,00h   ; 3Eh 00h    
+PUSH PSW    ; F5h        
+MVI E,03h   ; 1Eh 03h    
+CALL SHOW   ; CDh XXh XXh
+MOV A,D     ; 7Ah        
+INR A       ; 3Ch        
+DAA         ; 27h        
+MVI E,00h   ; 1Eh 00h    
+CALL SHOW   ; CDh XXh XXh
+MOV D,A     ; 57h        
+POP PSW     ; F1h        
+RET         ; C9h        
+:SHOW       ;            
+PUSH PSW    ; F5h        
+ANI 0Fh     ; E6h 0Fh    
+ADI 30h     ; C6h 30h    
+PUSH PSW    ; F5h        
+MOV A,E     ; 7Bh        
+INR A       ; 3Ch        
+OUT 00h     ; D3h 00h    
+POP PSW     ; F1h        
+OUT 01h     ; D3h 01h    
+POP PSW     ; F1h        
+PUSH PSW    ; F5h        
+ANI F0h     ; E6h F0h    
+RRC         ; 0Fh        
+RRC         ; 0Fh        
+RRC         ; 0Fh        
+RRC         ; 0Fh        
+ADI 30h     ; C6h 30h    
+PUSH PSW    ; F5h        
+MOV A,E     ; 7Bh        
+OUT 00h     ; D3h 00h    
+POP PSW     ; F1h        
+OUT 01h     ; D3h 01h    
+POP PSW     ; F1h        
+RET         ; C9h        
+:TELA       ;            
+MVI A,00h   ; 3Eh 00h    
+OUT 00h     ; D3h 00h    
+MVI A,30h   ; 3Eh 30h    
+OUT 01h     ; D3h 01h    
+OUT 01h     ; D3h 01h    
+MVI A,3Ah   ; 3Eh 3Ah    
+OUT 01h     ; D3h 01h    
+MVI A,30h   ; 3Eh 30h    
+OUT 01h     ; D3h 01h    
+OUT 01h     ; D3h 01h    
+MVI A,3Ah   ; 3Eh 3Ah    
+OUT 01h     ; D3h 01h    
+MVI A,30h   ; 3Eh 30h    
+OUT 01h     ; D3h 01h    
+OUT 01h     ; D3h 01h    
+RET         ; C9h        

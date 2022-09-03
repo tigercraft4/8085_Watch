@@ -1,0 +1,87 @@
+ORG 0000h   ; *          
+:EN0000     ;            
+LXI H,FFFFh ; 21h FFFFh  
+SPHL        ; F9h        
+CALL CLRSCR ; CDh XXh XXh
+LXI H,1000h ; 21h 1000h  
+CALL STROUT ; CDh XXh XXh
+CALL CLRSCR ; CDh XXh XXh
+LXI H,1040h ; 21h 1040h  
+CALL STROUT ; CDh XXh XXh
+/*HLT         ; 76H
+JMP EN0000  ; C3h 00h 00h
+HLT         ; 76h        
+/* INICIO DA INCLUSAO
+:CLRSCR     ;            
+XRA A       ; AFh        
+OUT 00h     ; D3h 00h    
+MVI B,20h   ; 06h 20h    
+:LOOPCL     ;            
+MVI A,20h   ; 3Eh 20h    
+OUT 01h     ; D3h 01h    
+DCR B       ; 05h        
+JNZ LOOPCL  ; C2h XXh XXh
+RET         ; C9h        
+/* FIM DA INCLUSAO
+/* INICIO DA INCLUSAO
+:STROUT     ;            
+MOV A,M     ; 7Eh        
+CPI 24h     ; FEh 24h    
+JZ FIMST    ; CAh 36h 00h
+OUT 01h     ; D3h 01h    
+PUSH PSW    ; F5h        
+INX H       ; 23h        
+POP PSW     ; F1h        
+JNZ STROUT  ; C2h XXh XXh
+:FIMST      ;            
+RET         ; C9h        
+/* FIM DA INCLUSAO
+ORG 1000h   ; *          
+/*ESCOLA
+DB 20h      ;            
+DB 45h      ;            
+DB 53h      ;            
+DB 43h      ;            
+DB 4Fh      ;            
+DB 4Ch      ;            
+DB 41h      ;            
+DB 20h      ;            
+/*TECNICA
+DB 54h      ;            
+DB 45h      ;            
+DB 43h      ;            
+DB 4Eh      ;            
+DB 49h      ;            
+DB 43h      ;            
+DB 41h      ;            
+DB 20h      ;            
+DB 20h      ;            
+/*FEDERAL
+DB 46h      ;            
+DB 45h      ;            
+DB 44h      ;            
+/*DB 45H      ;
+/*DB 52H      ;
+/*DB 41H      ;
+/*DB 4CH      ;
+DB 20h      ;            
+/*DE
+DB 44h      ;            
+DB 45h      ;            
+DB 20h      ;            
+/*CUBATAO
+DB 43h      ;            
+DB 55h      ;            
+DB 42h      ;            
+DB 41h      ;            
+DB 54h      ;            
+DB 41h      ;            
+DB 4Fh      ;            
+DB 24h      ;            
+ORG 1040h   ; *          
+DB 44h      ;            
+DB 45h      ;            
+DB 53h      ;            
+DB 45h      ;            
+DB 4Eh      ;            
+DB 24h      ;            

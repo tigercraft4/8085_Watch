@@ -1,0 +1,4 @@
+ORG E000h   ; *          
+MVI A,14h   ; 3Eh 14h    
+CPI 14h     ; FEh 14h    
+HLT         ; 76h        

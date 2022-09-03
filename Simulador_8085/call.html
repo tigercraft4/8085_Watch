@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1252">
+<META NAME="Generator" CONTENT="Microsoft Word 97">
+<TITLE>call</TITLE>
+<META NAME="Version" CONTENT="8.0.3514">
+<META NAME="Date" CONTENT="12/5/96">
+<META NAME="Template" CONTENT="C:\Arquivos de Programas\Microsoft Office\Office\HTML.DOT">
+</HEAD>
+<BODY TEXT="#000000" BGCOLOR="#ffffff">
+
+<B><FONT FACE="Arial" SIZE=5 COLOR="#0000ff"><P>#CALL </P>
+</B></FONT><FONT FACE="Arial"><P>Provoca o salto do programa para a rotina especificada. O simulador n&atilde;o trabalha com endere&ccedil;os absolutos, mas sempre com labels. Os labels s&atilde;o indicadores de linha, que sempre iniciam com dois pontos (:). No exemplo abaixo, a sub-rotina </FONT><FONT FACE="Courier New">TELA</FONT><FONT FACE="Arial"> &eacute; chamada. Uma sub-rotina sempre acaba com a instru&ccedil;&atilde;o </FONT><FONT FACE="Courier New">RET</FONT><FONT FACE="Arial">, indicando que deve retornar &agrave; linha posterior &agrave; instru&ccedil;&atilde;o </FONT><FONT FACE="Courier New">CALL</FONT><FONT FACE="Arial"> (no exemplo abaixo, a sub-rotina retornar&aacute; na instru&ccedil;&atilde;o </FONT><FONT FACE="Courier New">HLT</FONT><FONT FACE="Arial">). Nesta vers&atilde;o do simulador, o tamanho m&aacute;ximo dos labels &eacute; 6 caracteres.</P>
+<P>&nbsp;</P>
+<B><P>Exemplo : </P>
+</B><P>&nbsp;</P>
+</FONT><FONT FACE="Courier New"><P>ORG E000H</P>
+<P>CALL TELA</P>
+<P>HLT</P>
+<P>:TELA</P>
+<P>MVI A,0</P>
+<P>OUT 0</P>
+<P>MVI A,32H</P>
+<P>OUT 1</P>
+<P>RET </P>
+<P>&nbsp;</P>
+</FONT><B><FONT FACE="Arial"><P>Flags Afetados :</P>
+</B></FONT><FONT FACE="Courier New"><P>Nenhum.</P>
+</FONT><FONT FACE="Arial"><P>&nbsp;</P>
+</FONT><P>&nbsp;</P>
+<P>&nbsp;</P></BODY>
+</HTML>

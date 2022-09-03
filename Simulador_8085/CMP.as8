@@ -1,0 +1,5 @@
+ORG E000h   ; *          
+MVI A,14h   ; 3Eh 14h    
+MVI B,08h   ; 06h 08h    
+CMP B       ; B8h        
+HLT         ; 76h        

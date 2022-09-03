@@ -1,0 +1,11 @@
+:STROUT     ;            
+MOV A,M     ; 7Eh        
+CPI 24h     ; FEh 24h    
+JZ FIMST    ; CAh 32h E0h
+OUT 01h     ; D3h 01h    
+PUSH PSW    ; F5h        
+INX H       ; 23h        
+POP PSW     ; F1h        
+JNZ STROUT  ; C2h XXh XXh
+:FIMST      ;            
+RET         ; C9h        

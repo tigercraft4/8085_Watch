@@ -1,0 +1,5 @@
+ORG E000h   ; *          
+MVI A,55h   ; 3Eh 55h    
+RRC         ; 0Fh        
+RRC         ; 0Fh        
+HLT         ; 76h        

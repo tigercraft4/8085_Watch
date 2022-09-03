@@ -1,0 +1,10 @@
+ORG E000h   ; *          
+LXI H,E000h ; 21h E000h  
+:INICIO     ;            
+MOV A,M     ; 7Eh        
+OUT 01h     ; D3h 01h    
+IN 03h      ; DBh 03h    
+CPI 10h     ; FEh 10h    
+JZ INICIO   ; CAh 03h E0h
+INR L       ; 2Ch        
+JMP INICIO  ; C3h 03h E0h

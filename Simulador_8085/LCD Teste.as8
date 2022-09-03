@@ -1,0 +1,11 @@
+ORG E000h   ; *          
+MVI A,20h   ; 3Eh 20h    
+:INICIO     ;            
+OUT 01h     ; D3h 01h    
+INR A       ; 3Ch        
+CPI C0h     ; FEh C0h    
+CZ INIA     ; CCh XXh XXh
+JMP INICIO  ; C3h XXh XXh
+:INIA       ;            
+MVI A,20h   ; 3Eh 20h    
+RET         ; C9h        

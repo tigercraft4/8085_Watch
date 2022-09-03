@@ -1,0 +1,102 @@
+Inicializar onde o programa é guardado
+Definir [B][C][D][E][H][L]com 30h
+Chamar a rotina NOME
+Chamar a rotina IREL
+
+ 
+INICIO
+
+Incrementar C 
+
+Mover para o [C] para o acumulador 
+Compara o acumulador com o numero 39h
+Caso seja verdade vai para a rotina :SEC2
+
+Mover para o [B] para o acumulador 
+Compara o acumulador com o numero 35h
+Caso seja verdade vai para a rotina :SEC1
+
+Mover para o [E] para o acumulador 
+Compara o acumulador com o numero 39h
+Caso seja verdade vai para a rotina :MIN2
+
+Mover para o [D] para o acumulador 
+Compara o acumulador com o numero 35h
+Caso seja verdade vai para a rotina :MIN1
+
+Mover para o [H] para o acumulador 
+Compara o acumulador com o numero 32h
+Caso seja verdade vai para a rotina :HR2
+
+Mover para o [L] para o acumulador 
+Compara o acumulador com o numero 39h
+Caso seja verdade vai para a rotina :HR1
+
+Chama a rotina para escrever
+
+Volta para inicio do programa
+
+
+SEC2     
+           
+Move o numero 30h para a variavel [C] 
+Incrementa a variavel [B] 
+Retorna ao programa principal
+
+SEC1     
+Move o numero 30h para a variavel [B] 
+Incrementa a variavel [E] 
+Retorna ao programa principal
+
+MIN2
+Move o numero 30h para a variavel [E] 
+Incrementa a variavel [D] 
+Retorna ao programa principal
+
+MIN1      
+Move o numero 30h para a variavel [D] 
+Incrementa a variavel [L]
+Retorna ao programa principal
+
+HR2        
+Mover para o [H] para o acumulador 
+Compara o acumulador com o numero 34h
+Caso seja verdade vai para a rotina :RST
+Retorna ao programa principal
+
+HR1       
+Move o numero 30h para a varaivel [L]
+Retorna ao programa principal
+
+NOME        
+Coloca o cursor na posição 02h   
+Escreve Francisco no ecrã
+Retorna ao programa principal
+         
+ESCR                   
+Coloca o cursor na posição 14h    
+Move o conteudo de [H] para o acumulador
+Escreve o que está no acumulador no ecrã   
+Move o conteudo de [L] para o acumulador        
+Escreve o que está no acumulador no ecrã 
+Move para o acumulador, 3Ah(:)
+Escreve o que está no acumulador no ecrã
+Move o conteudo de [D] para o acumulador 
+Escreve o que está no acumulador no ecrã
+Move o conteudo de [E] para o acumulador 
+Escreve o que está no acumulador no ecrã
+Move para o acumulador, 3Ah(:)
+Escreve o que está no acumulador no ecrã 
+Move o conteudo de [B] para o acumulador   
+Escreve o que está no acumulador no ecrã
+Move o conteudo de [C] para o acumulador  
+Escreve o que está no acumulador no ecrã 
+Retorna ao programa principal    
+
+:IREL
+Posiciona o cursor na posição 14h
+Escreve 00:00:00 no ecrã 
+
+:RST   
+Coloca as horas, minutos e segundos a 0
+Retorna ao programa Principal

@@ -1,0 +1,31 @@
+ORG E000h   ; *          
+lxi h,ffffh
+sphl
+MVI C,3Ch   ; 0Eh 3Ch    
+MVI D,2Ah   ; 16h 2Ah    
+mov a,c
+call print
+mov b,c
+call print
+MVI H,FFh   ; 26h FFh    
+MVI L,FFh   ; 2Eh FFh    
+SPHL        ; F9h        
+:MULT       ;            
+MVI B,00h   ; 06h 00h    
+MVI E,09h   ; 1Eh 09h    
+:MULT0      ;            
+MOV A,C     ; 79h        
+RAR         ; 1Fh        
+MOV C,A     ; 4Fh        
+DCR E       ; 1Dh        
+JZ DONE     ; CAh 1Eh E0h
+MOV A,B     ; 78h        
+JNC MULT1   ; D2h XXh XXh
+ADD D       ; 82h        
+:MULT1      ;            
+RAR         ; 1Fh        
+MOV B,A     ; 47h        
+JMP MULT0   ; C3h 0Dh E0h
+:DONE       ;            
+HLT         ; 76h        
+#print.as8

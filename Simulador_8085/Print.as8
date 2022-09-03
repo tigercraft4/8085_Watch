@@ -1,0 +1,18 @@
+:PRINT      ;            
+PUSH PSW    ; F5h        
+PUSH B      ; C5h        
+MOV B,A     ; 47h        
+ANI F0h     ; E6h F0h    
+RAR         ; 1Fh        
+RAR         ; 1Fh        
+RAR         ; 1Fh        
+RAR         ; 1Fh        
+ADI 30h     ; C6h 30h    
+OUT 01h     ; D3h 01h    
+MOV A,B     ; 78h        
+ANI 0Fh     ; E6h 0Fh    
+ADI 30h     ; C6h 30h    
+OUT 01h     ; D3h 01h    
+POP B       ; C1h        
+POP PSW     ; F1h        
+RET         ; C9h        

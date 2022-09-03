@@ -1,0 +1,4 @@
+STC         ; 37h        
+MVI C,05h   ; 0Eh 05h    
+MVI A,07h   ; 3Eh 07h    
+SBB C       ; 99h        

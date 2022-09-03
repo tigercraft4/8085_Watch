@@ -1,0 +1,4 @@
+STC         ; 37h        
+MVI A,20h   ; 3Eh 20h    
+SUI 32h     ; D6h 32h    
+HLT         ; 76h        

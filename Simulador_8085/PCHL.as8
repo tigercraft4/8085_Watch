@@ -1,0 +1,3 @@
+LXI H,4455h ; 21h 4455h  
+PCHL        ; E9h        
+HLT         ; 76h        

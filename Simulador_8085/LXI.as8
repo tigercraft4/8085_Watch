@@ -1,0 +1,5 @@
+LXI B,1122h ; 01h 1122h  
+LXI D,3344h ; 11h 3344h  
+LXI H,5566h ; 21h 5566h  
+LXI SP,7788h; 31h 7788h  
+HLT         ; 76h        

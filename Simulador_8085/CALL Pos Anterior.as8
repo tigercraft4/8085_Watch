@@ -1,0 +1,4 @@
+:TESTE      ;            
+MVI A,2Dh   ; 3Eh 2Dh    
+MOV B,A     ; 47h        
+CALL TESTE  ; CDh XXh XXh

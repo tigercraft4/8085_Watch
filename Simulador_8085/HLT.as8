@@ -1,0 +1,10 @@
+ORG E000h   ; *          
+CALL TESTE  ;            
+MVI A,0Ah   ; 3Eh 0Ah    
+MOV B,A     ; 47h        
+HLT         ; 76h        
+:TESTE      ;            
+MVI B,2Dh   ; 06h 2Dh    
+MOV C,B     ; 48h        
+RET         ;            
+MVI E,43h   ; 1Eh 43h    

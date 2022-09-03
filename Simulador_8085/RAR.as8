@@ -1,0 +1,5 @@
+ORG E000h   ; *          
+MVI A,69h   ; 3Eh 69h    
+RAR         ; 1Fh        
+RAR         ; 1Fh        
+HLT         ; 76h        

@@ -1,0 +1,24 @@
+ORG 000Ah   ; *          
+:INICIO     ;            
+IN 02h      ; DBh 02h    
+CPI 00h     ; FEh 00h    
+JZ SE_HOR   ; CAh XXh XXh
+MVI A,06h   ; 3Eh 06h    
+OUT 03h     ; D3h 03h    
+MVI A,05h   ; 3Eh 05h    
+OUT 03h     ; D3h 03h    
+MVI A,09h   ; 3Eh 09h    
+OUT 03h     ; D3h 03h    
+MVI A,0Ah   ; 3Eh 0Ah    
+OUT 03h     ; D3h 03h    
+JMP INICIO  ; C3h 0 10   
+:SE_HOR     ;            
+MVI A,0Ah   ; 3Eh 0Ah    
+OUT 03h     ; D3h 03h    
+MVI A,09h   ; 3Eh 09h    
+OUT 03h     ; D3h 03h    
+MVI A,05h   ; 3Eh 05h    
+OUT 03h     ; D3h 03h    
+MVI A,06h   ; 3Eh 06h    
+OUT 03h     ; D3h 03h    
+JMP INICIO  ; C3h 0 10   

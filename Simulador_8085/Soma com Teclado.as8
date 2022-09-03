@@ -1,0 +1,11 @@
+ORG E000h   ; *          
+IN 03h      ; DBh 03h    
+RAL         ; 17h        
+RAL         ; 17h        
+RAL         ; 17h        
+RAL         ; 17h        
+MOV H,A     ; 67h        
+IN 03h      ; DBh 03h    
+ADD H       ; 84h        
+MOV H,A     ; 67h        
+HLT         ; 76h        

@@ -1,0 +1,5 @@
+:GETCHAR    ;            
+IN 03h      ; DBh 03h    
+CPI FFh     ; FEh FFh    
+JZ GETCHA   ; CAh XXh XXh
+RET         ; C9h        

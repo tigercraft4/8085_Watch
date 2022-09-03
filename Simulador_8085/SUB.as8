@@ -1,0 +1,5 @@
+STC         ; 37h        
+MVI A,47h   ; 3Eh 47h    
+MVI B,27h   ; 06h 27h    
+SUB B       ; 90h        
+HLT         ; 76h        

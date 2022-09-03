@@ -1,0 +1,5 @@
+MVI A,2Dh           ; 3Eh 2Dh
+MVI H,17h           ; 26h 17h
+MVI L,2Ch           ; 2Eh 2Ch
+SPHL                ; F9h
+OUT 01h             ; D3h 01h

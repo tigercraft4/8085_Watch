@@ -1,0 +1,5 @@
+ORG E000h   ; *          
+CMC         ; 3Fh        
+MVI A,6Dh   ; 3Eh 6Dh    
+RAL         ; 17h        
+HLT         ; 76h        

@@ -1,0 +1,125 @@
+ORG 0000h
+CALL NOME   
+CALL IREL
+MVI B,30h  
+MVI C,30h     
+MVI D,30h   
+MVI E,30h   
+MVI L,30h
+MVI H,30h
+:INICIO  
+INR C      
+MOV A,C     
+CPI 3Ah     
+CZ SEC2   
+MOV A,B      
+CPI 36h        
+CZ SEC1    
+MOV A,E        
+CPI 3Ah         
+CZ MIN2  
+MOV A,D    
+CPI 36h       
+CZ MIN1  
+MOV A,L  
+CPI 34h      
+CZ HR2 
+MOV A,L  
+CPI 3Ah    
+CZ HR1   
+CALL ESCR   
+JMP INICIO
+:SEC2           
+MVI C,30h      
+INR B
+RET        
+:SEC1      
+MVI B,30h   
+INR E 
+RET     
+:MIN2         
+MVI E,30h   
+INR D       
+RET    
+:MIN1              
+MVI D,30h  
+INR L       
+RET 
+:HR1             
+INR H 
+MVI L,30h 
+RET
+:HR2         
+MOV A,H      
+CPI 32h     
+CZ RST
+RET 
+:NOME          
+MVI A,02h      
+OUT 00h        
+MVI A,07h       
+OUT 01h      
+MVI A,46h       
+OUT 01h        
+MVI A,52h    
+OUT 01h      
+MVI A,41h     
+OUT 01h       
+MVI A,4Eh   
+OUT 01h        
+MVI A,43h    
+OUT 01h      
+MVI A,49h      
+OUT 01h       
+MVI A,53h   
+OUT 01h        
+MVI A,43h   
+OUT 01h       
+MVI A,4Fh      
+OUT 01h       
+RET              
+:ESCR               
+MVI A,14h     
+OUT 00h     
+MOV A,H       
+OUT 01h     
+MOV A,L       
+OUT 01h      
+MVI A,3Ah    
+OUT 01h       
+MOV A,D         
+OUT 01h     
+MOV A,E           
+OUT 01h        
+MVI A,3Ah     
+OUT 01h      
+MOV A,B      
+OUT 01h      
+MOV A,C        
+OUT 01h     
+RET            
+:IREL       
+MVI A,14h     
+OUT 00h         
+MVI A,30h   
+OUT 01h    
+OUT 01h     
+MVI A,3Ah  
+OUT 01h    
+MVI A,30h   
+OUT 01h      
+OUT 01h       
+MVI A,3Ah  
+OUT 01h    
+MVI A,30h      
+OUT 01h     
+OUT 01h        
+RET 
+:RST
+MVI B,30h  
+MVI C,30h     
+MVI D,30h   
+MVI E,30h   
+MVI H,30h  
+MVI L,30h  
+RET                

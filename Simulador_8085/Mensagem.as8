@@ -1,0 +1,79 @@
+ORG E000h   ; *          
+MVI A,00h   ; 3Eh 00h    
+OUT 00h     ; D3h 00h    
+MVI A,DFh   ; 3Eh DFh    
+:INICIO     ;            
+INR A       ; 3Ch        
+CNZ ESPACO  ; C4h XXh XXh
+CZ CONT     ; CCh XXh XXh
+JMP INICIO  ; C3h XXh XXh
+:CONT       ;            
+MVI A,01h   ; 3Eh 01h    
+OUT 00h     ; D3h 00h    
+MVI A,45h   ; 3Eh 45h    
+OUT 01h     ; D3h 01h    
+MVI A,73h   ; 3Eh 73h    
+OUT 01h     ; D3h 01h    
+MVI A,63h   ; 3Eh 63h    
+OUT 01h     ; D3h 01h    
+MVI A,6Fh   ; 3Eh 6Fh    
+OUT 01h     ; D3h 01h    
+MVI A,6Ch   ; 3Eh 6Ch    
+OUT 01h     ; D3h 01h    
+MVI A,61h   ; 3Eh 61h    
+OUT 01h     ; D3h 01h    
+MVI A,20h   ; 3Eh 20h    
+OUT 01h     ; D3h 01h    
+MVI A,54h   ; 3Eh 54h    
+OUT 01h     ; D3h 01h    
+MVI A,65h   ; 3Eh 65h    
+OUT 01h     ; D3h 01h    
+MVI A,63h   ; 3Eh 63h    
+OUT 01h     ; D3h 01h    
+MVI A,6Eh   ; 3Eh 6Eh    
+OUT 01h     ; D3h 01h    
+MVI A,69h   ; 3Eh 69h    
+OUT 01h     ; D3h 01h    
+MVI A,63h   ; 3Eh 63h    
+OUT 01h     ; D3h 01h    
+MVI A,61h   ; 3Eh 61h    
+OUT 01h     ; D3h 01h    
+MVI A,10h   ; 3Eh 10h    
+OUT 00h     ; D3h 00h    
+MVI A,46h   ; 3Eh 46h    
+OUT 01h     ; D3h 01h    
+MVI A,65h   ; 3Eh 65h    
+OUT 01h     ; D3h 01h    
+MVI A,64h   ; 3Eh 64h    
+OUT 01h     ; D3h 01h    
+MVI A,65h   ; 3Eh 65h    
+OUT 01h     ; D3h 01h    
+MVI A,72h   ; 3Eh 72h    
+OUT 01h     ; D3h 01h    
+MVI A,61h   ; 3Eh 61h    
+OUT 01h     ; D3h 01h    
+MVI A,6Ch   ; 3Eh 6Ch    
+OUT 01h     ; D3h 01h    
+MVI A,20h   ; 3Eh 20h    
+OUT 01h     ; D3h 01h    
+MVI A,64h   ; 3Eh 64h    
+OUT 01h     ; D3h 01h    
+MVI A,65h   ; 3Eh 65h    
+OUT 01h     ; D3h 01h    
+MVI A,20h   ; 3Eh 20h    
+OUT 01h     ; D3h 01h    
+MVI A,43h   ; 3Eh 43h    
+OUT 01h     ; D3h 01h    
+MVI A,75h   ; 3Eh 75h    
+OUT 01h     ; D3h 01h    
+MVI A,62h   ; 3Eh 62h    
+OUT 01h     ; D3h 01h    
+MVI A,61h   ; 3Eh 61h    
+OUT 01h     ; D3h 01h    
+HLT         ; 76h        
+:ESPACO     ;            
+MOV B,A     ; 47h        
+MVI A,20h   ; 3Eh 20h    
+MOV A,B     ; 78h        
+OUT 01h     ; D3h 01h    
+RET         ; C9h        

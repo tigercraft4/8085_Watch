@@ -1,0 +1,12 @@
+LXI H,FFFFh ; 21h FFFFh  
+SPHL        ; F9h        
+MVI A,3Fh   ; 3Eh 3Fh    
+INR A       ; 3Ch        
+PUSH PSW    ; F5h        
+MVI A,7Eh   ; 3Eh 7Eh    
+ORI A0h     ; F6h A0h    
+POP PSW     ; F1h        
+LXI B,BBCCh ; 01h BBCCh  
+PUSH B      ; C5h        
+LXI B,8787h ; 01h 8787h  
+POP B       ; C1h        

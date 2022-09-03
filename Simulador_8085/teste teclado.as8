@@ -1,0 +1,2 @@
+ORG E000h   ; *          
+IN 03h      ; DBh 03h    

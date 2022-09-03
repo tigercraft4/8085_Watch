@@ -1,0 +1,8 @@
+LXI H,1000h ; 21h 1000h  
+SPHL        ; F9h        
+MVI M,FFh   ; 36h FFh    
+INR L       ; 2Ch        
+MVI M,F0h   ; 36h F0h    
+LXI H,0E0Ah ; 21h 0E0Ah  
+XTHL        ; E3h        
+HLT         ; 76h        

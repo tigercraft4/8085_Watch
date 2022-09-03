@@ -1,0 +1,3 @@
+MVI A,55h   ; 3Eh 55h    
+STA AAAAh   ; 32h AAh AAh
+HLT         ; 76h        

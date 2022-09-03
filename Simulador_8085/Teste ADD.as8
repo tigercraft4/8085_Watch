@@ -1,0 +1,5 @@
+MVI A,30h           ; 3Eh 30h
+MVI M,DEh           ; 36h DEh
+ADD M               ; 86h
+MVI C,10h           ; 0Eh 10h
+ADD C               ; 81h

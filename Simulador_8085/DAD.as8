@@ -1,0 +1,7 @@
+ORG E000h   ; *          
+MVI B,31h   ; 06h 31h    
+MVI C,21h   ; 0Eh 21h    
+MVI H,10h   ; 26h 10h    
+MVI L,5Ah   ; 2Eh 5Ah    
+DAD B       ; 09h        
+HLT         ; 76h        

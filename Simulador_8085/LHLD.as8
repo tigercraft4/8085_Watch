@@ -1,0 +1,6 @@
+MVI A,70h   ; 3Eh 70h    
+STA 24AAh   ; 32h AAh 24h
+MVI A,3Fh   ; 3Eh 3Fh    
+STA 24ABh   ; 32h ABh 24h
+LHLD 24AAh  ; 2Ah AAh 24h
+HLT         ; 76h        

@@ -1,0 +1,132 @@
+ORG 0000h   //define onde o programa é guardado na memoria       
+MVI B,30h   //define a variavel B no numero 30h = 0d
+MVI C,30h   //define a variavel C no numero 30h = 0d
+MVI D,30h   //define a variavel D no numero 30h = 0d
+MVI E,30h   //define a variavel E no numero 30h = 0d
+MVI H,30h   //define a variavel H no numero 30h = 0d
+MVI L,30h   //define a variavel L no numero 30h = 0d
+CALL NOME   //faz Chamada da rotina para escrever o nome
+CALL IREL   //faz Chamada da rotina para escrever o 00:00:00
+ 
+:INICIO      //Define a variavel Inicio        
+INR C        //Incrementa os segundos na variavel C  
+MOV A,C    	 //move para o acumulador a varaivel CALL
+CPI 3Ah      //compara o acumulador com o numero 3Ah 
+CZ SEC2      //caso seja verdade vai para a rotina :SEC2
+MOV A,B      //move o conteudo de B para o acumulador  
+CPI 36h      //compara o acumulador com o numero 36h 
+CZ SEC1      //caso seja verdade vai para a rotina :SEC1
+MOV A,E      //move o conteudo de E para o acumulador
+CPI 3Ah      //compara o acumulador com o numero 3Ah
+CZ MIN2   	 //caso seja verdade vai para a rotina :MIN2
+MOV A,D      //move o conteudo de D para o acumulador
+CPI 35h      //compara o acumulador com o numero 35h 
+CZ MIN1      //caso seja verdade vai para a rotina :MIN1
+MOV A,H      //move o conteudo de H para o acumulador
+CPI 3Ah      //compara o acumulador com o numero 3Ah 
+CZ HR2       //caso seja verdade vai para a rotina :HR2
+MOV A,L      //move o conteudo de H para o acumulador  
+CPI 3Ah      //compara o acumulador com o numero 32h 
+CZ HR1       //caso seja verdade vai para a rotina :HR1
+CALL ESCR    //chama a rotina para escrever
+JMP INICIO   //volta para inicio do programa
+
+:SEC2                
+MVI C,30h    //move o numero 0d para a variavel C   
+INR B		 //incrementa a variavel B 
+RET          //retorna ao programa principal
+:SEC1     
+MVI B,30h    //move o numero 0d para a variavel B 
+INR E 		 //incrementa a variavel E 
+RET       	 //retorna ao programa principal
+:MIN2      
+MVI E,30h    //move o numero 0d para a variavel E 
+INR D        //incrementa a variavel D 
+RET       	 //retorna ao programa principal
+:MIN1      
+MVI D,30h    //move o numero 0d para a variavel D  
+INR L        //incrementa a variavel L 
+RET     	 //retorna ao programa principal
+:HR2           
+MOV A,H    //move o numero H para o acumulador 
+CPI 34h		//compara o acumulador com 34h
+CZ RST		//caso seja verdade vai para a rotina :RST
+RET    		 //retorna ao programa principal
+:HR1
+INR H         //incrementa a variavel H
+MVI H,30h    //move o numero 0d para a varaivel H  
+RET   		 //retorna ao programa principal
+
+:NOME        //escreve Francisco no ecrã
+MVI A,02h    //move para o acumulador, 02h
+OUT 00h      //coloca o ponteiro na posição para escrever   
+MVI A,07h    //move para o acumulador, 07h 
+OUT 01h      //escreve o que está no acumulador no ecrã
+MVI A,46h    //move para o acumulador, 46h 
+OUT 01h      //escreve o que está no acumulador no ecrã   
+MVI A,52h    //move para o acumulador, 52h    
+OUT 01h      //escreve o que está no acumulador no ecrã   
+MVI A,41h    //move para o acumulador, 41h    
+OUT 01h      //escreve o que está no acumulador no ecrã 
+MVI A,4Eh    //move para o acumulador, 4Eh  
+OUT 01h      //escreve o que está no acumulador no ecrã
+MVI A,43h    //move para o acumulador, 43h  
+OUT 01h      //escreve o que está no acumulador no ecrã 
+MVI A,49h    //move para o acumulador, 49h 
+OUT 01h      //escreve o que está no acumulador no ecrã  
+MVI A,53h    //move para o acumulador, 53h  
+OUT 01h      //escreve o que está no acumulador no ecrã  
+MVI A,43h    //move para o acumulador, 43h  
+OUT 01h      //escreve o que está no acumulador no ecrã
+MVI A,4Fh    //move para o acumulador, 4Fh  
+OUT 01h      //escreve o que está no acumulador no ecrã 
+RET  		 //retorna ao programa principal
+         
+:ESCR       //escreve no ecrã             
+MVI A,14h   //move para o acumulador, 14h  
+OUT 00h     //coloca o ponteiro na posição para escrever    
+MOV A,H     //move o conteudo de H para o acumulador
+OUT 01h     //escreve o que está no acumulador no ecrã   
+MOV A,L     //move o conteudo de L para o acumulador        
+OUT 01h     //escreve o que está no acumulador no ecrã 
+MVI A,3Ah   //move para o acumulador, 3Ah
+OUT 01h     //escreve o que está no acumulador no ecrã
+MOV A,D     //move o conteudo de D para o acumulador 
+OUT 01h     //escreve o que está no acumulador no ecrã
+MOV A       //move o conteudo de E para o acumulador 
+OUT 01h     //escreve o que está no acumulador no ecrã
+MVI A,3Ah   //move para o acumulador, 3Ah
+OUT 01h     //escreve o que está no acumulador no ecrã 
+MOV A,B     //move o conteudo de B para o acumulador   
+OUT 01h     //escreve o que está no acumulador no ecrã
+MOV A,C     //move o conteudo de C para o acumulador  
+OUT 01h     //escreve o que está no acumulador no ecrã 
+RET         //retorna ao programa principal    
+
+:IREL      //inicializa o ecrã com 00:00:00
+
+MVI A,14h  //move para o acumulador 14h     
+OUT 00h    /coloca o ponteiro na posição para escrever     
+MVI A,30h  //move para o acumulador, 30h 
+OUT 01h    //escreve o que está no acumulador no ecrã   
+OUT 01h    //escreve o que está no acumulador no ecrã 
+MVI A,3Ah  //move para o acumulador 3Ah   
+OUT 01h    //escreve o que está no acumulador no ecrã 
+MVI A,30h  //move para o acumulador 30h    
+OUT 01h    //escreve o que está no acumulador no ecrã 
+OUT 01h    //escreve o que está no acumulador no ecrã  
+MVI A,3Ah  //move para o acumulador 3Ah 
+OUT 01h    //escreve o que está no acumulador no ecrã 
+MVI A,30h  //move para o acumulador 30h
+OUT 01h    //escreve o que está no acumulador no ecrã   
+OUT 01h    //escreve o que está no acumulador no ecrã   
+RET        //retorna ao programa principal              
+
+:RST
+MVI B,30h   //define a variavel B no numero 30h = 0d
+MVI C,30h   //define a variavel C no numero 30h = 0d  
+MVI D,30h   //define a variavel D no numero 30h = 0d
+MVI E,30h   //define a variavel E no numero 30h = 0d
+MVI H,30h   //define a variavel H no numero 30h = 0d
+MVI L,30h   //define a variavel L no numero 30h = 0d
+RET  

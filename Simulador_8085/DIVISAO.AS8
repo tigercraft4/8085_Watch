@@ -1,0 +1,46 @@
+ORG E000h   ; *          
+LXI SP,FFFFh; 31h FFFFh  
+MVI B,04h   ; 06h 04h    
+MVI D,02h   ; 16h 02h    
+:DIV        ;            
+MOV A,D     ; 7Ah        
+CMA         ; 2Fh        
+MOV D,A     ; 57h        
+MOV A,E     ; 7Bh        
+CMA         ; 2Fh        
+MOV E,A     ; 5Fh        
+INX D       ; 13h        
+LXI H,0000h ; 21h 0000h  
+MVI A,11h   ; 3Eh 11h    
+:DV0        ;            
+PUSH H      ; E5h        
+DAD D       ; 19h        
+JNC DV1     ; D2h XXh XXh
+XTHL        ; E3h        
+:DV1        ;            
+POP H       ; E1h        
+PUSH PSW    ; F5h        
+MOV A,C     ; 79h        
+RAL         ; 17h        
+MOV C,A     ; 4Fh        
+MOV A,B     ; 78h        
+RAL         ; 17h        
+MOV B,A     ; 47h        
+MOV A,L     ; 7Dh        
+RAL         ; 17h        
+MOV L,A     ; 6Fh        
+MOV A,H     ; 7Ch        
+RAL         ; 17h        
+MOV H,A     ; 67h        
+POP PSW     ; F1h        
+DCR A       ; 3Dh        
+JNZ DV0     ; C2h XXh XXh
+ORA A       ; B7h        
+MOV A,H     ; 7Ch        
+RAR         ; 1Fh        
+MOV D,A     ; 57h        
+MOV A,L     ; 7Dh        
+RAR         ; 1Fh        
+MOV E,A     ; 5Fh        
+RET         ; C9h        
+HLT         ; 76h        

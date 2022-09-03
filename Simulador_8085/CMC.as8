@@ -1,0 +1,5 @@
+ORG E000h   ; *          
+CMC         ; 3Fh        
+CMC         ; 3Fh        
+CMC         ; 3Fh        
+HLT         ; 76h        

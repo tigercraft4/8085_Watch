@@ -1,0 +1,5 @@
+MVI B,30h   ; 06h 30h    
+MVI C,04h   ; 0Eh 04h    
+:INICIO     ;            
+DCX B       ; 0Bh        
+JMP INICIO  ; C3h XXh XXh

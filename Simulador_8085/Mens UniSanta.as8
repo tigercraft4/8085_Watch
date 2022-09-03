@@ -1,0 +1,62 @@
+ORG E000h   ; *          
+LXI H,FFFFh ; 21h FFFFh  
+SPHL        ; F9h        
+CALL CLRSCR ; CDh XXh XXh
+:STROUT     ;            
+LXI H,E100h ; 21h E100h  
+:LOOPST     ;            
+MOV A,M     ; 7Eh        
+CPI 24h     ; FEh 24h    
+JZ FIMST    ; CAh 18h E0h
+OUT 01h     ; D3h 01h    
+PUSH PSW    ; F5h        
+INX H       ; 23h        
+POP PSW     ; F1h        
+JNZ LOOPST  ; C2h XXh XXh
+:FIMST      ;            
+HLT         ; 76h        
+/* INICIO DA INCLUSAO
+:CLRSCR     ;            
+XRA A       ; AFh        
+OUT 00h     ; D3h 00h    
+MVI B,20h   ; 06h 20h    
+:LOOPCL     ;            
+MVI A,20h   ; 3Eh 20h    
+OUT 01h     ; D3h 01h    
+DCR B       ; 05h        
+JNZ LOOPCL  ; C2h XXh XXh
+RET         ; C9h        
+/* FIM DA INCLUSAO
+ORG E100h   ; *          
+DB 20h      ;            
+DB 20h      ;            
+DB 55h      ;            
+DB 4Eh      ;            
+DB 49h      ;            
+DB 56h      ;            
+DB 45h      ;            
+DB 52h      ;            
+DB 53h      ;            
+DB 49h      ;            
+DB 44h      ;            
+DB 41h      ;            
+DB 44h      ;            
+DB 45h      ;            
+DB 20h      ;            
+DB 20h      ;            
+DB 20h      ;            
+DB 53h      ;            
+DB 41h      ;            
+DB 4Eh      ;            
+DB 54h      ;            
+DB 41h      ;            
+DB 20h      ;            
+DB 20h      ;            
+DB 43h      ;            
+DB 45h      ;            
+DB 43h      ;            
+DB 49h      ;            
+DB 4Ch      ;            
+DB 49h      ;            
+DB 41h      ;            
+DB 24h      ;            

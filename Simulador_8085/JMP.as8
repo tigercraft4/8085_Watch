@@ -1,0 +1,9 @@
+ORG E000h   ; *          
+:INICIO     ;            
+JMP TESTE   ;            
+MVI A,50h   ; 3Eh 50h    
+:TESTE      ;            
+MVI B,38h   ; 06h 38h    
+MOV D,B     ; 50h        
+JMP NICIO   ;            
+HLT         ; 76h        

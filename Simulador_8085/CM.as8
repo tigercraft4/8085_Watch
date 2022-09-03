@@ -1,0 +1,12 @@
+ORG E000h   ; *          
+MVI A,01h   ; 3Eh 01h    
+INR A       ; 3Ch        
+CM TESTE    ; FCh XXh XXh
+ADI F0h     ; C6h F0h    
+CM TESTE    ; FCh XXh XXh
+NOP         ; 00h        
+HLT         ; 76h        
+:TESTE      ;            
+MVI D,66h   ; 16h 66h    
+RET         ; C9h        
+            ;            

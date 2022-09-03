@@ -1,0 +1,8 @@
+call teste
+mvi a,10
+mov b,a
+:teste
+mvi b,45
+mov c,b
+ret
+mvi e,67

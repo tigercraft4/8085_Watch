@@ -1,0 +1,11 @@
+MVI B,AAh   ; 06h AAh    
+MVI C,AAh   ; 0Eh AAh    
+MVI A,60h   ; 3Eh 60h    
+STA AAAAh   ; 32h AAh AAh
+MVI D,BBh   ; 16h BBh    
+MVI E,BBh   ; 1Eh BBh    
+MVI A,70h   ; 3Eh 70h    
+STA BBBBh   ; 32h BBh BBh
+CMA         ; 2Fh        
+LDAX B      ; 0Ah        
+LDAX D      ; 1Ah        

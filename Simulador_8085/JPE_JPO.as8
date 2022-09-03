@@ -1,0 +1,8 @@
+MVI A,70h   ; 3Eh 70h    
+:INICIO     ;            
+INR A       ; 3Ch        
+JPE FIM     ; EAh XXh XXh
+JPO INICIO  ; E2h XXh XXh
+:FIM        ;            
+JMP INICIO  ; C3h XXh XXh
+HLT         ; 76h        

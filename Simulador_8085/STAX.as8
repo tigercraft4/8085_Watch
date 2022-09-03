@@ -1,0 +1,4 @@
+MVI B,0Eh   ; 06h 0Eh    
+MVI C,21h   ; 0Eh 21h    
+MVI A,AAh   ; 3Eh AAh    
+STAX B      ; 02h        
